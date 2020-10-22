@@ -37,9 +37,13 @@ export interface Hunk {
     }
 }
 
+interface GitBlameResponse {
+    repository: { commit: { blob: { blame: Hunk[] } } }
+}
+
 export const queryBlameHunks = async (uri: string): Promise<Hunk[]> => {
     const { repo, rev, path } = resolveURI(uri)
-    const { data, errors } = await sourcegraph.commands.executeCommand(
+    const { data, errors }: { errors?: string[]; data: GitBlameResponse } = await sourcegraph.commands.executeCommand(
         'queryGraphQL',
         gql`
             query GitBlame($repo: String!, $rev: String!, $path: String!) {
