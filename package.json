@@ -40,7 +40,7 @@
   "devDependencies": {
     "@sourcegraph/eslint-config": "^0.20.12",
     "@sourcegraph/tsconfig": "^4.0.1",
-    "@types/lodash": "^4.14.162",
+    "@types/lodash": "4.14.168",
     "eslint": "^7.11.0",
     "lnfs-cli": "^2.1.0",
     "mkdirp": "^1.0.4",
@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.20",
-    "rxjs": "^6.6.3",
+    "rxjs": "7.8.2",
     "tagged-template-noop": "^2.1.1"
   }
 }
